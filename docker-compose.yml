@@ -1,0 +1,34 @@
+services: 
+  mysqldb:
+    image: mysql:8.0
+    ports:
+      - "3308:3306"
+    volumes:
+      - biblio-mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: quizdb
+      MYSQL_USER: quizuser
+      MYSQL_PASSWORD: quizpass
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./Quiz_Back
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/quizdb
+      SPRING_DATASOURCE_USERNAME: quizuser
+      SPRING_DATASOURCE_PASSWORD: quizpass
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+
+volumes:
+  biblio-mysql-data:
+

@@ -2,7 +2,7 @@ name: ChallengeDevOps_Quiz
 
 on:
   push:
-    branches: ["*"]
+    branches: [main, Back]
   pull_request:
 
 jobs:

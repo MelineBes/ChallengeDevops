@@ -54,4 +54,11 @@ public class ReponseUtilisateurController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/utilisateur/{utilisateurId}/bonnes-reponses")
+    public ResponseEntity<Integer> getNombreBonnesReponses(@PathVariable int utilisateurId) {
+        int bonnesReponses = reponseUtilisateurService.compterBonnesReponses(utilisateurId);
+        return new ResponseEntity<>(bonnesReponses, HttpStatus.OK);
+    }
+
 }

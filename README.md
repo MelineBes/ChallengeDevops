@@ -44,3 +44,8 @@ Trois types de tests sont essentiels pour garantir la qualité d’une applicati
 - Les tests fonctionnels
 
 ---
+
+### Shema de l'architecture 
+![image](https://github.com/user-attachments/assets/d89ecf1f-8e4f-475f-a967-d3c447bca8ac)
+
+---

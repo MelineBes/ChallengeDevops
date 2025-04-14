@@ -19,4 +19,46 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Reponse> reponses;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIntitule() {
+        return intitule;
+    }
+
+    public void setIntitule(String intitule) {
+        this.intitule = intitule;
+    }
+
+    public Quiz getQuiz() {
+        return quiz;
+    }
+
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    public List<Reponse> getReponses() {
+        return reponses;
+    }
+
+    public void setReponses(List<Reponse> reponses) {
+        this.reponses = reponses;
+    }
+
+    public Question() {
+
+    }
+
+    public Question(String intitule, Quiz quiz, List<Reponse> reponses) {
+        this.intitule = intitule;
+        this.quiz = quiz;
+        this.reponses = reponses;
+    }
 }

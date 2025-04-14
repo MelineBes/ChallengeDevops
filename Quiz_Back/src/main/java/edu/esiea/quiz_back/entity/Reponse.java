@@ -15,4 +15,46 @@ public class Reponse {
     @ManyToOne
     @JoinColumn(name = "question_id")
     private Question question;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTexte() {
+        return texte;
+    }
+
+    public void setTexte(String texte) {
+        this.texte = texte;
+    }
+
+    public boolean isCorrecte() {
+        return correcte;
+    }
+
+    public void setCorrecte(boolean correcte) {
+        this.correcte = correcte;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public Reponse() {
+
+    }
+
+    public Reponse(String texte, boolean correcte, Question question) {
+        this.texte = texte;
+        this.correcte = correcte;
+        this.question = question;
+    }
 }

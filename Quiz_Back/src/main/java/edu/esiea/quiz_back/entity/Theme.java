@@ -17,4 +17,36 @@ public class Theme {
     @OneToMany(mappedBy = "theme")
     private List<Quiz> quizz;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Quiz> getQuizz() {
+        return quizz;
+    }
+
+    public void setQuizz(List<Quiz> quizz) {
+        this.quizz = quizz;
+    }
+
+    public Theme() {
+
+    }
+
+    public Theme(String name, List<Quiz> quizz) {
+        this.name = name;
+        this.quizz = quizz;
+    }
 }

@@ -1,3 +1,5 @@
+name: ChallengeDevOps_Quiz
+
 on:
   push:
     branches: [main, Back]

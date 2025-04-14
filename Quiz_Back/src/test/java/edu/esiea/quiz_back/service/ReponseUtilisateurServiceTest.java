@@ -112,4 +112,26 @@ public class ReponseUtilisateurServiceTest {
         assertTrue(result);
     }
 
+    @Test
+    public void testCompterBonnesReponses() {
+        // Simuler des réponses de l'utilisateur
+        ReponseUtilisateur reponse1 = new ReponseUtilisateur();
+        reponse1.setId(1);
+        reponse1.setCorrecte(true);  // Bonne réponse
+
+        ReponseUtilisateur reponse2 = new ReponseUtilisateur();
+        reponse2.setId(2);
+        reponse2.setCorrecte(false); // Mauvaise réponse
+
+        // Simuler le comportement du repository
+        when(reponseUtilisateurRepository.findByUtilisateurId(1)).thenReturn(Arrays.asList(reponse1, reponse2));
+
+        // Appeler la méthode de service
+        int bonnesReponses = reponseUtilisateurService.compterBonnesReponses(1);
+
+        // Vérifier que le nombre de bonnes réponses est correct
+        assertEquals(1, bonnesReponses);  // Il y a 1 bonne réponse
+    }
+
+
 }

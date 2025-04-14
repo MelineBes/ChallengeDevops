@@ -41,4 +41,15 @@ public class ReponseUtilisateurService {
         }
         return false;
     }
+
+    public int compterBonnesReponses(int utilisateurId) {
+        // Récupérer toutes les réponses de l'utilisateur
+        List<ReponseUtilisateur> reponses = reponseUtilisateurRepository.findByUtilisateurId(utilisateurId);
+
+        // Compter le nombre de bonnes réponses
+        long count = reponses.stream().filter(ReponseUtilisateur::isCorrecte).count();
+
+        return (int) count; // retourner le nombre de bonnes réponses
+    }
+
 }

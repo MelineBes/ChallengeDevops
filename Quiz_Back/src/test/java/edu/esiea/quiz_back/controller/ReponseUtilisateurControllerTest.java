@@ -121,4 +121,16 @@ public class ReponseUtilisateurControllerTest {
         mockMvc.perform(delete("/reponses-utilisateur/1"))
                 .andExpect(status().isNotFound());
     }
+
+    @Test
+    public void testGetNombreBonnesReponses() throws Exception {
+        // Simuler le comportement du service
+        when(reponseUtilisateurService.compterBonnesReponses(1)).thenReturn(1);
+
+        // Effectuer une requête GET sur l'endpoint du contrôleur
+        mockMvc.perform(get("/reponses-utilisateur/utilisateur/1/bonnes-reponses"))
+                .andExpect(status().isOk())  // Vérifier que le statut est OK
+                .andExpect(content().string("1"));  // Vérifier que le corps de la réponse contient le bon nombre (1)
+    }
+
 }

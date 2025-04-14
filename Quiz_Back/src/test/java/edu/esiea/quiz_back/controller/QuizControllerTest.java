@@ -1,7 +1,6 @@
-package edu.esiea.quiz_back.controller.controller;
+package edu.esiea.quiz_back.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.esiea.quiz_back.controller.QuizController;
 import edu.esiea.quiz_back.entity.Quiz;
 import edu.esiea.quiz_back.service.QuizService;
 import org.junit.jupiter.api.BeforeEach;

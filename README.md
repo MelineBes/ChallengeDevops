@@ -49,3 +49,16 @@ Trois types de tests sont essentiels pour garantir la qualité d’une applicati
 ![image](https://github.com/user-attachments/assets/d89ecf1f-8e4f-475f-a967-d3c447bca8ac)
 
 ---
+
+### Les réalisations : 
+- 1. Création back des quiz avec persistance
+- 2. Création back pour répondre aux quiz
+- 3. Calcul automatique de la note du quiz
+- 4. Mise en production sur DockerHub (CD ici)
+
+J’ai fait le choix de me concentrer sur le déploiement via Docker et une utilisation rigoureuse de Git, plutôt que sur le design de l’interface.
+
+Je prévois de poursuivre ce projet sur mon temps libre afin de développer davantage la partie DevOps, en vue de la présenter lors de l’oral.
+
+---
+
